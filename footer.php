@@ -17,7 +17,7 @@ bloginfo('siteurl'); ?>" title="<?php bloginfo('name'); ?>"><?php
 bloginfo('name'); ?></a>.</div>
 
 			<div class="powered">
-                <a href="http://labs.cnfph.me/" target="_blank" title="Labs Theme">Labs Theme</a>
+                <a href="http://labs.cnfph.me/labs-theme/" target="_blank" title="Labs Theme">Labs Theme</a>
 				powered by<a href="<?php echo esc_url( __( 'http://wordpress.org', 'labs' ) ); ?>" title="<?php esc_attr_e( 'WordPress', 'labs' ); ?>"><?php printf( __( ' %s', 'labs' ), 'WordPress' ); ?></a>
 			</div>
             <a class="returnTop Indicator btn" href="#" onclick="return;" style="display:none"><strong><br>Top</strong><span></span></a>
