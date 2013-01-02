@@ -24,6 +24,7 @@ Two-column, fixed width, Widget, right sidebar, white, blue. Theme to use HTML5 
  
 ###Necessary plug-ins:
 WP-PageNavi
+
 Breadcrumb NavXT
  
 ###Test validation:
@@ -91,6 +92,7 @@ Labs Theme 1.10
  
 ###必要插件：
 WP-PageNavi
+
 Breadcrumb NavXT
  
 ###测试验证:
