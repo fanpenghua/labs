@@ -6,14 +6,16 @@
     Author: F.P.H
     Author URI: http://labs.cnfph.me/
 */
+/*共用申明*/
 body {
 	margin: 0;
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font-family: "Microsoft YaHei";
+	font-family:Arial, Helvetica, sans-serif;
 	vertical-align: baseline;
 	line-height: 1.5em;
+	text-rendering: optimizeLegibility;
 }
 div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 	margin: 0;
@@ -42,7 +44,7 @@ button, input, select, textarea {
 	width: auto;
 	overflow: visible;
 	margin: 0;
-	font-size: 1em;
+	font-size: 100%;
 	vertical-align: baseline;
 }
 textarea {
@@ -50,16 +52,17 @@ textarea {
 	vertical-align: text-top;
 }
 a {
-	color: #000;
+	color: #333;
 	text-decoration: none
 }
 a:hover {
 	color: #09f;
+	-webkit-transition:all .2s linear
 }
 /* =Headings
 -------------------------------------------------------------- */
 h1, h2, h3, h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-	font-weight: 700;
+	font-weight:bold;
 	line-height: 1.5em;
 	word-wrap: break-word;
 }
@@ -90,23 +93,25 @@ h6 {
 body {
 }
 header, #wrapper, #home-content, footer {
-	width: 960px;
+	width: 950px;
 	margin: 0 auto;
 }
 header, #wrapper, footer {
 	padding: 0 20px;
 }
 header {
-	height: 124px;
+	height: 120px;
 }
 #wrapper {
-	margin-top: 20px;
+	margin-top: 15px;
 }
 footer {
 	clear: both;
 	font-size: 0.875em;
+	border-top: 1px #dedede solid;
+	line-height: 40px;
 	margin: 0 auto;
-	padding-top: 20px;
+	height: 40px;
 }
 footer .copyright {
 	float: left;
@@ -116,14 +121,12 @@ footer .powered {
 }
 footer .copyright, footer .powered {
 	height: 40px;
-	line-height: 40px;
 }
 /*header topnav*/
 .topnav {
 	float: right;
 	margin: 4px 0;
 	text-align: right;
-	height: 90px;
 }
 .topnav li {
 	display: inline;
@@ -144,20 +147,22 @@ footer .copyright, footer .powered {
 }
 /*Top Title*/
 header hgroup {
-	height: 90px;
+	height: 80px;
 	width: 30.00%;
 	float: left;
 	margin-right: 2.00%;
 }
-header hgroup #site-title {
-	margin-top: 20px;
+header hgroup .site-title {
+	margin-top: 3px;
 }
-header hgroup #site-title a {
-	font-size: 1.5em;
-	line-height: 1.5em;
+header hgroup .logo {
+    margin-top: 10px;
+}
+header hgroup .site-title a {
+	font-size: 1.8em;
 	color: #000;
 }
-header hgroup #site-description {
+header hgroup .site-description {
 	font-size: 1em;
 	font-weight: normal;
 	line-height: 16px;
@@ -165,10 +170,14 @@ header hgroup #site-description {
 }
 /*Home Images Tab*/
 #container {
-	width: 960px;
+	z-index: 0;
+}
+#container, .slides_container {
 	margin: 0 auto;
 	position: relative;
-	z-index: 0;
+}
+#container, .slides_container, .slides_container div.slide {
+	width: 950px;
 }
 #example {
 	height: 320px;
@@ -180,10 +189,7 @@ header hgroup #site-description {
 	z-index: 100;
 }
 .slides_container {
-	width: 960px;
-	margin: 0 auto;
 	overflow: hidden;
-	position: relative;
 	display: none;
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
@@ -196,7 +202,6 @@ header hgroup #site-description {
 	-webkit-shadow: 0 -1px 0 #fefcfc inset, 0 0 4px rgba(0,0,0,.15);
 }
 .slides_container div.slide {
-	width: 960px;
 	height: 300px;
 	display: block;
 }
@@ -215,7 +220,7 @@ header hgroup #site-description {
 	height: 48px;
 	display: block;
 	z-index: 101;
-	opacity: 0.7;
+	opacity: 0.3;
 }
 #slides .next {
 	width: 32px;
@@ -230,10 +235,10 @@ header hgroup #site-description {
 	background-size: 32px 48px;
 }
 #slides .next:hover, #slides .prev:hover {
-	opacity: 0.5;
+	opacity: 0.7;
 }
 #slides .next {
-	left: 928px;
+	left: 918px;
 }
 .pagination {
 	margin: 8px auto 0;
@@ -297,8 +302,9 @@ header hgroup #site-description {
 /*Right Sibebar*/
 #sidebar {
 	float: right;
-	width: 260px;
+	width: 270px;
 	min-height: 300px;
+	margin-top:-40px;
 }
 #sidebar .widget {
 }
@@ -317,6 +323,10 @@ header hgroup #site-description {
 #sidebar .widget ul, .home-widget .widget ul, .widget .textwidget, .widget .tagcloud, .widget_search form, #wp-calendar {
 	margin: 10px 10px 20px 12px;
 	font-size: 0.875em;
+}
+.widget_search form {
+	padding-top:5px;
+	padding-bottom:5px;
 }
 #wp-calendar {
 	margin-bottom: 0px;
@@ -341,7 +351,7 @@ header hgroup #site-description {
 }
 .widget_search #searchsubmit {
 	background: #f7f7f7;
-	padding: 2px 8px;
+	padding: 1px 8px 0px 8px;
 	border: 1px solid #ccc;
 	-webkit-box-shadow: inset 0px -1px 1px rgba(0, 0, 0, 0.09);
 	-moz-box-shadow: inset 0px -1px 1px rgba(0, 0, 0, 0.09);
@@ -366,43 +376,40 @@ header hgroup #site-description {
 
 /*Home widget*/
 .home-widget {
-	width: 49.00%;
+	width: 470px;
 	min-height: 100px;
 	float: left;
 }
-.home-widget ul li {
+.home-widget .widget ul li.cat-item {
 	float: left;
 	width: 100%;
 }
-.home-widget ul li a {
+.home-widget .widget ul li.cat-item a {
 	float: left
 }
-.home-widget ul li p {
+.home-widget .widget ul li p.post-date {
 	float: right
 }
 .right {
-	margin-right: 2.00%
+	margin-right: 10px;
 }
 /*Content*/
 #content {
 	float: left;
-	width: 680px;
+	width: 670px;
 	min-height: 300px;
-	margin-right: 2.00%;
+	margin-right: 10px;
 	font-size: 0.875em;
 }
 #content .post-title, #content .entry-title {
 	font-size: 1.125em;
-	margin-top: 10px;
-	margin-bottom: 4px;
 }
 #content .post {
+	padding-top:10px;
 }
 #content .hr {
-	background: #E0E0E0;
-	height: 1px;
 	width: 100%;
-	border-bottom: 1px solid #f7f7f7;
+	border-bottom: 1px dashed #ccc;
 	margin: 10px 0px 10px 0px;
 }
 #content .post-meta, #content .entry-meta {
@@ -411,7 +418,7 @@ header hgroup #site-description {
 	height: 24px;
 	margin-bottom: 10px;
 }
-#content .post-meta a, #content .entry-meta a{
+#content .post-meta a, #content .entry-meta a {
 	color: #333;
 }
 #content .post-edit, #content .edit-link, .entry-meta .edit-link {
@@ -435,6 +442,7 @@ header hgroup #site-description {
 }
 .comments-link {
 	float: right;
+	padding-right:10px;
 }
 #content .entry-content {
 	margin: 10px 0
@@ -470,6 +478,7 @@ header nav ul li {
 }
 header nav ul li a {
 	font-weight: normal;
+	font-weight: 400;
 	display: block;
 	line-height: 34px;
 	padding: 0 20px;
@@ -492,7 +501,7 @@ header nav ul li.current-menu-item, header nav ul li.current_page_item {
 	border-bottom: none;
 }
 header nav ul li.current-menu-item a, header nav ul li.current_page_item a {
-	font-weight: bold;
+	font-weight: 400;
 	color: #fff;
 }
 header .sub-menu {
@@ -560,7 +569,7 @@ blockquote p {
 }
 /*-- Post comments --*/
 #comments-title {
-	padding: 8px;
+	padding: 4px;
 	background-color: #f7f7f7;
 	background: -moz-linear-gradient(#fff, #f7f7f7);
 	background: -webkit-linear-gradient(#fff, #f7f7f7);
@@ -737,17 +746,20 @@ p.form-allowed-tags {
 }
 /*面包屑*/
 .breadcrumb {
-	font-size: 0.875em;
+	padding-bottom:10px;
+	margin-bottom:10px;
+	width:680px;
+	border-bottom:1px #f0f0f0 solid
 }
 /*分页*/
 .navigation {
 	color: #111;
 	display: block;
-	font-size: 0.813em;
+	font-size: 0.875em;
 	height: 28px;
 	line-height: 28px;
 	margin: 20px 0;
-	padding: 0 5px;
+	margin-left:-2px;
 }
 .wp-pagenavi {
 	clear: both;
@@ -761,7 +773,6 @@ p.form-allowed-tags {
 	-moz-box-shadow: 0px 1px #EFEFEF !important;
 	-webkit-box-shadow: 0px 1px #EFEFEF !important;
 	background: #f7f7f7 !important;
-	font-size: 0.75em !important;
 	margin-right: 3px !important;
 	text-decoration: none !important;
 	background: #f7f7f7
@@ -806,7 +817,7 @@ p.form-allowed-tags {
 /*btn*/
 .demo, .demo:hover {
 	color: #000;
-	padding: 4px 8px;
+	padding: 6px 12px;
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
 	border-radius: 4px;
@@ -818,7 +829,7 @@ p.form-allowed-tags {
 }
 .download, .downloadlink, .download:hover, .downloadlink:hover {
 	color: #000;
-	padding: 4px 8px;
+	padding: 6px 12px;
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
 	border-radius: 4px;
@@ -828,3 +839,44 @@ p.form-allowed-tags {
 	color: #FFF;
 	background-color: #09f;
 }
+/*返回顶部*/
+a.returnTop {
+	right: 5px;
+	bottom: -0px;
+	width: 40px;
+	height:40px;
+	line-height:40px;
+	padding: 20px 10px 30px;
+	-moz-transition: bottom 520ms ease-in-out;
+	-webkit-transition: bottom 520ms ease-in-out;
+	background: #CCC;
+	border: 1px solid #CCC;
+}
+a.btn.Indicator {
+	position: fixed;
+	z-index: 100020;
+	display: block;
+	text-align: center;
+	font-size: 1.125em;
+	font-weight: 520;
+}
+a.btn {
+	position: relative;
+	display: inline-block;
+	padding: 14px 20px;
+	text-align: center;
+	line-height: 0.875em;
+	cursor: pointer;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	background-color: #f7f7f7;
+	background: -moz-linear-gradient(#ffffff, #f7f7f7);
+	background: -webkit-linear-gradient(#ffffff, #f7f7f7);
+	box-shadow: 0 -1px 0 #fefcfc inset, 0 0 4px rgba(0,0,0,.15);
+	-moz-shadow: 0 -1px 0 #fefcfc inset, 0 0 4px rgba(0,0,0,.15);
+	-webkit-shadow: 0 -1px 0 #fefcfc inset, 0 0 4px rgba(0,0,0,.15);
+}
+
+/*多说 版权屏蔽*/
+.ds-powered-by { display:none}

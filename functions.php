@@ -177,7 +177,7 @@ function labs_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Home Images Tab', 'labs' ),
 		'id' => 'home-images-tab',
-		'description' => __( 'Sample:<a href="#" target="_blank" title="GO Link"><img src="http://Image path/IMG_3879.png" width="960" height="300" title="Image Title" alt="Image Title"></a>', 'labs' ),
+		'description' => __( 'Sample:<a href="#" target="_blank" title="GO Link"><img src="http://Image path/IMG_3879.png" width="950" height="300" title="Image Title" alt="Image Title"></a>', 'labs' ),
 		'before_widget' => '<div class="slide %2$s"">',
 		'after_widget' => "</div>",
 		'before_title' => '<div class="caption" style="bottom:0"><span>',
@@ -212,17 +212,9 @@ function labs_content_nav( $nav_id ) {
 
 	if ( $wp_query->max_num_pages > 1 ) : ?>
 
-<nav id="<?php echo $nav_id; ?>">
-  <h3 class="assistive-text">
-    <?php _e( 'Post navigation', 'labs' ); ?>
-  </h3>
-  <div class="nav-previous">
-    <?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'labs' ) ); ?>
-  </div>
-  <div class="nav-next">
-    <?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'labs' ) ); ?>
-  </div>
-</nav>
+        <div class="navigation">
+         <?php if(function_exists('wp_pagenavi')) { wp_pagenavi(); } ?>
+		</div><!-- end of .navigation -->
 <!-- #nav-above -->
 <?php endif;
 }

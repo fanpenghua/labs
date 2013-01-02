@@ -67,7 +67,8 @@
             </div><!-- end of #post-<?php the_ID(); ?> -->
             
         <?php endwhile; ?> 
-        
+ 
+
         <div class="navigation">
          <?php if(function_exists('wp_pagenavi')) { wp_pagenavi(); } ?>
 		</div><!-- end of .navigation -->
