@@ -55,6 +55,7 @@ get_header(); ?>
     </div>
   </div>
 </div>
+<script src="<?php echo get_template_directory_uri(); ?>/js/jquery-1.8.2.min.js"></script> 
 <script src="<?php echo get_template_directory_uri(); ?>/js/slides.min.jquery.js"></script> 
 <script>
 $(function(){

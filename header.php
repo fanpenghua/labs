@@ -40,7 +40,6 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<script src="<?php echo get_template_directory_uri(); ?>/js/jquery-1.8.2.min.js"></script> 
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
@@ -65,7 +64,7 @@
   <div class="topnav">
     <?php if ( ! dynamic_sidebar( 'topnav' ) ) : ?>
     <?php _e(' <aside id="search-4" class="widget widget_search"><h3 class="widget-title">搜索</h3>
-		    <form method="get" id="searchform" action="http://127.0.0.1/labs/">
+		    <form method="get" id="searchform" action="'.home_url().'">
 			  <input type="text" class="field" name="s" id="search" placeholder="search here …">
 			  <input type="submit" class="submit" name="submit" id="searchsubmit" value="Go">
 	        </form>
