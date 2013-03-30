@@ -4,10 +4,10 @@
 Wordpress 3.4.2 or higher.
 
 ###Version: 
-Labs Theme 1.10
+Labs Theme 1.11
 
 ###Last Updated: 
-2013-1-2
+2013-3-30
 
 ###Release Date: 
 2012-10-26
@@ -36,6 +36,8 @@ Test browser: IE 9, Firefox 13.0.1, Opera 12.00, Safari 5.1.7 and Chrome 23.0.12
 
 ####[DEMO](http://labs.cnfph.me/demo/)
 
+####Version 1.11 2013-3-30
+1. Theme Code optimization.
 
 ####Version 1.10 2013-1-2
 1. Theme Options.
@@ -102,6 +104,9 @@ Breadcrumb NavXT
 ####[Theme Website](http://labs.cnfph.me/labs-theme/)    
 
 ####[DEMO](http://labs.cnfph.me/demo/)
+
+###Version 1.10 2013-3-30
+1. 皮肤代码优化。
 
 ###Version 1.10 2013-1-2
 1. 后台增加皮肤设置功能。
